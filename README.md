@@ -1,7 +1,10 @@
 # Sandbox
 Simple falling sand simulator made in Godot with C#
 
-https://user-images.githubusercontent.com/26551674/126063008-55407769-7ee4-487c-8415-f2ac0d494550.mp4
+
+
+https://user-images.githubusercontent.com/26551674/126063107-5a0fc3ba-42d5-4e42-929b-f5afd5074176.mp4
+
 
 Controls:
 0: AIR
