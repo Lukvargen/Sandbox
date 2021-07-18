@@ -1,0 +1,13 @@
+[gd_scene format=2]
+
+[node name="testScene" type="Node2D"]
+
+[node name="Label" type="Label" parent="."]
+margin_left = 316.357
+margin_top = 141.493
+margin_right = 356.357
+margin_bottom = 155.493
+text = "tesest test...q"
+__meta__ = {
+"_edit_use_anchors_": false
+}

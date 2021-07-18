@@ -1,0 +1,85 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Main.cs" type="Script" id=1]
+
+[sub_resource type="Shader" id=1]
+code = "shader_type canvas_item;
+
+
+void fragment() {
+	int x = int(UV.x / TEXTURE_PIXEL_SIZE.x);
+	int y = int(UV.y / TEXTURE_PIXEL_SIZE.y);
+	float stepx = SCREEN_PIXEL_SIZE.x;
+	float stepy = SCREEN_PIXEL_SIZE.y;
+	//COLOR = texture(TEXTURE, UV);
+	
+	//COLOR = mix(texture(TEXTURE, UV), texture(TEXTURE, UV+ vec2(stepx, 0.0)), 0.25);
+	vec4 final = mix(texture(TEXTURE, UV+ vec2(0.0, +stepy)), texture(TEXTURE, UV+ vec2(+stepx, 0.0)), 0.25);
+	COLOR = final;
+	//COLOR = mix(texture(TEXTURE, UV), texture(TEXTURE, UV+ vec2(-stepx, 0.0)), 0.25);
+	//COLOR = mix(texture(TEXTURE, UV), texture(TEXTURE, UV+ vec2(0.0, -stepy)), 0.25);
+//	if (UV.x > stepx*3.0) {
+//		COLOR.b = 1.0;
+//	}
+	
+	//COLOR = mix()
+	
+}
+"
+
+[sub_resource type="ShaderMaterial" id=2]
+shader = SubResource( 1 )
+
+[sub_resource type="ImageTexture" id=3]
+flags = 3
+flags = 3
+
+[node name="Main" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="."]
+material = SubResource( 2 )
+scale = Vector2( 2, 2 )
+texture = SubResource( 3 )
+centered = false
+
+[node name="SelectedLbl" type="Label" parent="."]
+margin_left = 8.73071
+margin_top = 9.52441
+margin_right = 48.7307
+margin_bottom = 23.5244
+text = "Text"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RadiusLbl" type="Label" parent="."]
+margin_left = 691.124
+margin_top = 9.52441
+margin_right = 731.124
+margin_bottom = 23.5244
+text = "aaa"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 710.0
+margin_top = 71.0
+margin_right = 768.0
+margin_bottom = 341.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer"]
+margin_right = 58.0
+margin_bottom = 270.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
